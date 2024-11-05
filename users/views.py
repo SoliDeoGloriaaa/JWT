@@ -38,6 +38,6 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
         self._check_authorization()
         serializer.save()
 
-    def perform_destroy(self, instance):
+    def perform_destroy(self, post):
         self._check_authorization()
-        instance.delete()
+        post.delete()
